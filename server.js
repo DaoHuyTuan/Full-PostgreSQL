@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const Product = require('./product');
 const parser = require('body-parser').urlencoded({ extended: false });
 
 
@@ -16,7 +17,15 @@ app.get("/",(req,res) => {
         res.render("home",{mang: data.rows});
         });
     });
+
+
+app.get("/insert",(req,res) => {
+    res.render("insert");
+});
+
+app.post("/insert",(req,res) => {
+    const {name ,description,price,image,video} = req.body;
+    const product = new Product(name ,description,price,image,video);
     
-
-
+})
 app.listen(3000);

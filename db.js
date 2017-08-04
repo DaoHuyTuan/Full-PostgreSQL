@@ -38,4 +38,7 @@ function insertDB(name ,description,price,image ,video,cb){
 //     if(err) return  console.log(err.toString());
     
 // })
-module.exports = queryDB;
+module.exports = {
+            queryDB,
+            insertDB
+};
