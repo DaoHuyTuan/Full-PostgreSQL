@@ -6,7 +6,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
     </head>
+    <style>
+        tr td{
+            border: 2px solid black;
+        }
+    </style>
     <body>
-            <h1>Hello wolrd</h1>        
+           <table>
+               <tr>
+                   <td>id</td>
+                   <td>name</td>
+                   <td>description</td>
+                   <td>price</td>
+                   <td>image</td>
+                   <td>video</td>
+               </tr>
+                
+               <% mang.forEach(e => { %>
+                    <tr>
+                        <td><%= e.id %></td>
+                        <td><%= e.name %></td>
+                        <td><%= e.description %></td>
+                        <td><%= e.price %></td>
+                        <td><%= e.image %></td>
+                        <td><%= e.video %></td>
+                    </tr>
+               <% }) %>
+           </table>
+
     </body>
 </html>
