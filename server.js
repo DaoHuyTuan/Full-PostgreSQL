@@ -23,5 +23,9 @@ app.get("/insert",(req,res) => {
     res.render("insert");
 });
 
-
+app.post("/insert",(req,res) => {
+    const {name ,description,price,image,video} = req.body;
+    
+    
+})
 app.listen(3000);
