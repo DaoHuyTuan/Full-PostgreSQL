@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const Product = require('./product');
 const parser = require('body-parser').urlencoded({ extended: false });
-
+const db = require("./db");
 
 const queryDB = require('./db');
 app.set("view engine" , "ejs");
@@ -23,9 +23,5 @@ app.get("/insert",(req,res) => {
     res.render("insert");
 });
 
-app.post("/insert",(req,res) => {
-    const {name ,description,price,image,video} = req.body;
-    const product = new Product(name ,description,price,image,video);
-    
-})
+
 app.listen(3000);
